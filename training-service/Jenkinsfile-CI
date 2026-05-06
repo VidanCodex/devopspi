@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         APP_NAME = "training-service"
-        DOCKER_IMAGE = "oussema22/pi-training-service"
+        DOCKER_IMAGE = "vidancodex/pi2-training-service"
         CD_JOB = "training-cd"
     }
 
@@ -95,3 +95,4 @@ pipeline {
         }
     }
 }
+

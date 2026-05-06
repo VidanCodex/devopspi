@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         APP_NAME = "messageService"
-        DOCKER_IMAGE = "oussema22/pi-messageservice"
+        DOCKER_IMAGE = "vidancodex/pi2-messageservice"
         CD_JOB = "message-cd"
     }
 
@@ -95,3 +95,4 @@ pipeline {
         }
     }
 }
+

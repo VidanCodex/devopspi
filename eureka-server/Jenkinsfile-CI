@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         APP_NAME = "eureka-server"
-        DOCKER_IMAGE = "oussema22/pi-eureka-server"
+        DOCKER_IMAGE = "vidancodex/pi2-eureka-server"
         CD_JOB = "eureka-cd"
     }
 
@@ -95,3 +95,4 @@ pipeline {
         }
     }
 }
+

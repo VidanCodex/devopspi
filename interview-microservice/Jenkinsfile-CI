@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         APP_NAME = "entretien-service"
-        DOCKER_IMAGE = "oussema22/pi-interview-microservice"
+        DOCKER_IMAGE = "vidancodex/pi2-interview-microservice"
         CD_JOB = "interview-cd"
     }
 
@@ -95,3 +95,4 @@ pipeline {
         }
     }
 }
+

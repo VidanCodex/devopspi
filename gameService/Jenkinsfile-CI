@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         APP_NAME = "gameService"
-        DOCKER_IMAGE = "oussema22/pi-gameservice"
+        DOCKER_IMAGE = "vidancodex/pi2-gameservice"
         CD_JOB = "game-cd"
     }
 
@@ -95,3 +95,4 @@ pipeline {
         }
     }
 }
+

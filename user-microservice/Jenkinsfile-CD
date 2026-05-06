@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         SERVICE_NAME   = 'user-microservice'
-        DOCKER_IMAGE   = 'oussema22/pi-user-microservice'
+        DOCKER_IMAGE   = 'vidancodex/pi2-user-microservice'
         NAMESPACE      = 'pi-soyosa'
         DEPLOYMENT     = 'user-microservice-deployment'
         KUBECONFIG     = "/var/lib/jenkins/.kube/config"
@@ -94,3 +94,4 @@ pipeline {
         }
     }
 }
+

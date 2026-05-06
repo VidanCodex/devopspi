@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         APP_NAME = "api-gateway"
-        DOCKER_IMAGE = "oussema22/pi-api-gateway"
+        DOCKER_IMAGE = "vidancodex/pi2-api-gateway"
         CD_JOB = "api-gateway-cd"
     }
 
@@ -95,3 +95,4 @@ pipeline {
         }
     }
 }
+

@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         SERVICE_NAME   = 'interview-microservice'
-        DOCKER_IMAGE   = 'oussema22/pi-interview-microservice'
+        DOCKER_IMAGE   = 'vidancodex/pi2-interview-microservice'
         NAMESPACE      = 'pi-soyosa'
         DEPLOYMENT     = 'interview-microservice-deployment'
         KUBECONFIG     = "/var/lib/jenkins/.kube/config"
@@ -94,3 +94,4 @@ pipeline {
         }
     }
 }
+

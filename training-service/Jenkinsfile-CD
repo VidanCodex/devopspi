@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         SERVICE_NAME   = 'training-service'
-        DOCKER_IMAGE   = 'oussema22/pi-training-service'
+        DOCKER_IMAGE   = 'vidancodex/pi2-training-service'
         NAMESPACE      = 'pi-soyosa'
         DEPLOYMENT     = 'training-service-deployment'
         KUBECONFIG     = "/var/lib/jenkins/.kube/config"
@@ -94,3 +94,4 @@ pipeline {
         }
     }
 }
+

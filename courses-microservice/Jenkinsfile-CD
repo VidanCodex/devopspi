@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         SERVICE_NAME = 'courses-microservice'
-        DOCKER_IMAGE = 'oussema22/pi'
+        DOCKER_IMAGE = 'vidancodex/pi2-courses-microservice'
         NAMESPACE    = 'pi-soyosa'
         DEPLOYMENT   = 'courses-microservice-deployment'
     }
@@ -103,3 +103,4 @@ pipeline {
         }
     }
 }
+

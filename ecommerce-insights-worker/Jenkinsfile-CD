@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         SERVICE_NAME   = 'ecommerce-insights-worker'
-        DOCKER_IMAGE   = 'oussema22/pi-ecommerce-insights-worker'
+        DOCKER_IMAGE   = 'vidancodex/pi2-ecommerce-insights-worker'
         NAMESPACE      = 'pi-soyosa'
         DEPLOYMENT     = 'ecommerce-insights-worker-deployment'
         KUBECONFIG     = "/var/lib/jenkins/.kube/config"
@@ -94,3 +94,4 @@ pipeline {
         }
     }
 }
+

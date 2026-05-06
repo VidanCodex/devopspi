@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         SERVICE_NAME   = 'pi-events'
-        DOCKER_IMAGE   = 'oussema22/pi-events'
+        DOCKER_IMAGE   = 'vidancodex/pi2-events'
         NAMESPACE      = 'pi-soyosa'
         DEPLOYMENT     = 'pi-events-deployment'
         KUBECONFIG     = "/var/lib/jenkins/.kube/config"
@@ -94,3 +94,4 @@ pipeline {
         }
     }
 }
+

@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         APP_NAME = "ecommerce-insights-worker"
-        DOCKER_IMAGE = "oussema22/pi-ecommerce-insights-worker"
+        DOCKER_IMAGE = "vidancodex/pi2-ecommerce-insights-worker"
         CD_JOB = "e-commerce-insights-worker-cd"
     }
 
@@ -67,3 +67,4 @@ pipeline {
         }
     }
 }
+

@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         SERVICE_NAME   = 'api-gateway'
-        DOCKER_IMAGE   = 'oussema22/pi-api-gateway'
+        DOCKER_IMAGE   = 'vidancodex/pi2-api-gateway'
         NAMESPACE      = 'pi-soyosa'
         DEPLOYMENT     = 'api-gateway-deployment'
         KUBECONFIG     = "/var/lib/jenkins/.kube/config"
@@ -94,3 +94,4 @@ pipeline {
         }
     }
 }
+

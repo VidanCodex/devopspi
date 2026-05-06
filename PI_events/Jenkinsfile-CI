@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         APP_NAME = "pi-events"
-        DOCKER_IMAGE = "oussema22/pi-events"
+        DOCKER_IMAGE = "vidancodex/pi2-events"
         CD_JOB = "events-cd"
     }
 
@@ -95,3 +95,4 @@ pipeline {
         }
     }
 }
+

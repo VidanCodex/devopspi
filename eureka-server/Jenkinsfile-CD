@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         SERVICE_NAME   = 'eureka-server'
-        DOCKER_IMAGE   = 'oussema22/pi-eureka-server'
+        DOCKER_IMAGE   = 'vidancodex/pi2-eureka-server'
         NAMESPACE      = 'pi-soyosa'
         DEPLOYMENT     = 'eureka-server-deployment'
         KUBECONFIG     = "/var/lib/jenkins/.kube/config"
@@ -94,3 +94,4 @@ pipeline {
         }
     }
 }
+
