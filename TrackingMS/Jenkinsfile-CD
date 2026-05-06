@@ -16,7 +16,6 @@ pipeline {
 
     stages {
 
-        
         stage('Setup Monitoring') {
             steps {
                 sh '''
@@ -46,7 +45,6 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 dir('TrackingMS') {
-
                     sh '''
                         kubectl apply -f trackingms-deployment.yaml
                         kubectl apply -f trackingms-service.yaml
@@ -54,38 +52,37 @@ pipeline {
 
                     sh """
                         kubectl set image deployment/${DEPLOYMENT} \
-                        tracking-service=${DOCKER_IMAGE}:${TAG} \
+                        trackingms=${DOCKER_IMAGE}:${TAG} \
                         -n ${NAMESPACE}
                     """
 
-                    sh '''
+                    sh """
                         kubectl rollout status deployment/${DEPLOYMENT} \
                         -n ${NAMESPACE} --timeout=120s
-                    '''
+                    """
                 }
             }
         }
 
         stage('Health Check') {
             steps {
-                sh '''
+                sh """
                     kubectl get pods -n ${NAMESPACE}
                     kubectl get svc -n ${NAMESPACE}
-                '''
+                """
             }
         }
     }
 
     post {
-
         success {
             echo 'CD pipeline completed successfully!'
         }
 
         failure {
-            sh '''
+            sh """
                 kubectl rollout undo deployment/${DEPLOYMENT} -n ${NAMESPACE} || true
-            '''
+            """
             echo 'Deployment failed. Rollback executed.'
         }
 
@@ -94,4 +91,3 @@ pipeline {
         }
     }
 }
-
