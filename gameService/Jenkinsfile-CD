@@ -54,7 +54,7 @@ pipeline {
 
                     sh """
                         kubectl set image deployment/${DEPLOYMENT} \
-                        gameService=${DOCKER_IMAGE}:${TAG} \
+                        gameservice=${DOCKER_IMAGE}:${TAG} \
                         -n ${NAMESPACE}
                     """
 
