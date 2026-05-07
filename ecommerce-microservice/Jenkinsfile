@@ -26,6 +26,18 @@ pipeline {
             }
         }
 
+        stage('Check JaCoCo Report') {
+            steps {
+                dir('ecommerce-microservice') {
+                    sh '''
+                    echo "Checking JaCoCo XML..."
+                    ls -la target/site/jacoco || true
+                    test -f target/site/jacoco/jacoco.xml && echo "FOUND: target/site/jacoco/jacoco.xml" || echo "MISSING: target/site/jacoco/jacoco.xml"
+                    '''
+                }
+            }
+        }
+
         stage('SonarQube Analysis') {
             steps {
                 dir('ecommerce-microservice') {
