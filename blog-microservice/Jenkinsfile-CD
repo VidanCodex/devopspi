@@ -12,11 +12,11 @@ pipeline {
         DEPLOYMENT     = 'blog-microservice-deployment'
         KUBECONFIG     = "/var/lib/jenkins/.kube/config"
         TAG            = "${params.DOCKER_TAG ?: 'latest'}"
-        EMAIL_CREDS    = credentials('gmail-app-password')
     }
 
     stages {
 
+        
         stage('Setup Monitoring') {
             steps {
                 sh '''
@@ -79,23 +79,19 @@ pipeline {
     post {
 
         success {
-            emailext(
-                subject: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "The deployment completed successfully.\nCheck details: ${env.BUILD_URL}",
-                to: "jomniyacine@gmail.com"
-            )
-
             echo 'CD pipeline completed successfully!'
         }
 
         failure {
-            emailext(
-                subject: "Build FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "The deployment failed.\nCheck logs: ${env.BUILD_URL}",
-                to: "jomniyacine@gmail.com"
-            )
+            sh '''
+                kubectl rollout undo deployment/${DEPLOYMENT} -n ${NAMESPACE} || true
+            '''
+            echo 'Deployment failed. Rollback executed.'
+        }
 
-            echo 'Deployment failed.'
+        always {
+            cleanWs()
         }
     }
 }
+
